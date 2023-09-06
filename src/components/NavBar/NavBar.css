@@ -1,0 +1,60 @@
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #202359; /* Change to your desired background color */
+    color: #fff; /* Change to your desired text color */
+    padding: 10px 20px; /* Add padding as needed */
+}
+
+/* Style the left side (title) */
+.title-left {
+    flex: 1; /* Take as much space as possible */
+    margin-right: 50%; /* Adjust the right margin as needed */
+}
+
+.title-left h1 {
+    font-size: 30px; /* Change to your desired font size */
+}
+
+/* Style the right side (links and user info) */
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    padding: 15px 40px 0 40px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-end; /* Align to the right */
+}
+
+/* Style links and "Log Out" button */
+.nav-links a, .user-info a {
+    color: #fff; /* Change to your desired link color */
+    text-decoration: none;
+    font-size: 15px; /* Change to your desired font size */
+    margin-right: 10px; /* Add spacing between links */
+}
+
+/* Style the divider between links */
+.divider {
+    color: #fff; /* Change to your desired divider color */
+    font-size: 18px; /* Change to your desired font size */
+    margin: 0 10px; /* Add spacing around the divider */
+}
+
+/* Style links on hover */
+.nav-links a:hover, .user-info a:hover {
+    text-decoration: underline;
+}

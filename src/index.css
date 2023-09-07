@@ -1,4 +1,3 @@
-/* CSS Custom Properties */
 :root {
   --white: #FFFFFF;
   --tan-1: #FBF9F6;
@@ -16,18 +15,14 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: var(--tan-4); */
-  /* padding: 2vmin; */
   height: 100vh;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Roboto, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -121,7 +116,7 @@ button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: blue;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;

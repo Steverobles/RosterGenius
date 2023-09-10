@@ -18,7 +18,7 @@ const Player = require('./models/player');
 
   await Player.deleteMany({});
   const players = await Player.create([
-    {name: 'Patrick Mahomes(KC)', category: categories[0], tier: 1},
+    {name: '(QB)Patrick Mahomes(KC)', category: categories[0], tier: 1},
     {name: 'Jalen Hurts(PHI)', category: categories[0], tier: 1},
     {name: 'Josh Allen(BUF)', category: categories[0], tier: 1},
     {name: 'Lamar Jackson(BAL)', category: categories[0], tier: 2},

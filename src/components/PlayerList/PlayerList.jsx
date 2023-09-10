@@ -1,4 +1,5 @@
 import React from 'react';
+import './PlayerList.css'
 
 export default function PlayerList({ playerDetails, addPlayerToRoster }) {
   const handleAddToRoster = (player) => {

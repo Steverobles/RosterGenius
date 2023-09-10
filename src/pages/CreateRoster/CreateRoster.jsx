@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from 'react-router-dom'
 import * as playersAPI from '../../utilities/players-api';
 import './CreateRoster.css';
 import { Link } from 'react-router-dom';
@@ -10,8 +11,11 @@ import UserLogOut from "../../components/UserLogOut/UserLogOut";
 export default function CreateRoster({ user, setUser }) {
   const [playerDetails, setMenuItems] = useState([]);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
+  // const [currentRoster, setCurrentRoster] = useState([])
   const [activeCat, setActiveCat] = useState('');
+  const [rosterName, setRosterName] = useState('')
   const categoriesRef = useRef([]);
+  const navigate = useNavigate()
 
   useEffect(function() {
     async function getItems() {
@@ -57,8 +61,37 @@ export default function CreateRoster({ user, setUser }) {
 
   const playersByTier = organizePlayersByTier(playerDetails)
 
-
-
+  
+  const handleSubmitRoster = async () => {
+    try {
+      const userId = user ? user._id : null;
+      
+      // Extract selected player IDs from the selectedPlayers array
+      const selectedPlayerIds = selectedPlayers.map((player) => player._id);
+  
+      const newRoster = {
+        userId,
+        selectedPlayers:selectedPlayerIds,
+        name: rosterName, 
+      };
+  
+      const response = await fetch('/api/rosters', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newRoster),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Error creating roster: ${response.statusText}`);
+      }
+  
+      navigate('/rosters');
+    } catch (error) {
+      console.error('Error creating roster:', error);
+    }
+  };
 
   return (
     <main className="CreateRosterPage">
@@ -74,11 +107,19 @@ export default function CreateRoster({ user, setUser }) {
       <PlayerList
         playersByTier={playersByTier}
         playerDetails={playerDetails.filter(player => player.category.name === activeCat)}
-        addPlayerToRoster={addPlayerToRoster} // Pass the function to PlayerList
+        addPlayerToRoster={addPlayerToRoster} 
       />
       <SelectedPlayersList selectedPlayers={selectedPlayers}
       onRemovePlayer={handleRemovePlayer}
       />
+       <div>
+        <input type="text" 
+          placeholder="Enter Your Roster Name"
+          value={rosterName}
+          onChange={(t) => setRosterName(t.target.value)}
+        />
+      </div>
+      <button onClick={handleSubmitRoster}>Submit Roster</button>
     </main>
   );
 }

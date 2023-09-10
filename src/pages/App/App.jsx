@@ -5,11 +5,11 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import CreateRoster from '../CreateRoster/CreateRoster';
 import YourRosters from '../YourRosters/YourRosters';
+import RosterDetails from '../RosterDetails/RosterDetails'
 import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-
   return (
     <main className="App">
       { user ?
@@ -19,6 +19,7 @@ export default function App() {
               {/* Route components in here */}
               <Route path="/rosters/new" element={<CreateRoster />} />
               <Route path="/rosters" element={<YourRosters />} />
+              <Route path='/rosters/:rosterId' element = {<RosterDetails/>}/>
             </Routes>
           </>
           :

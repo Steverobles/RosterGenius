@@ -1,12 +1,12 @@
-* {
-    background-color: lightgray;
-}
 
 .auth-page {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 100vh;
+    background-color: rgb(8, 43, 93);
+
+
 
 }
 

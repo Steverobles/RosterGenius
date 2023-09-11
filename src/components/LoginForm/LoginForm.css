@@ -1,0 +1,9 @@
+.form-container input {
+    width: 40vmin;
+    color: black;
+}
+
+.form-container button {
+    width: 40vmin;
+    margin-left: 23vmin; ;
+}

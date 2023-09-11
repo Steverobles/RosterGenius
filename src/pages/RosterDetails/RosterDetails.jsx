@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import ('./RosterDetails.css')
 
 function RosterDetails() {
@@ -47,8 +47,9 @@ function RosterDetails() {
 
   return (
     <div className='roster-details'>
+            <Link to="/rosters">Back</Link> 
+
       <p> {roster.name}</p>
-      <h3>Selected Players</h3>
       <div className='roster-players'>
       <ul>
         {roster.selectedPlayers.map((player) => (

@@ -1,6 +1,5 @@
 .roster-players {
     font-size: 1.5rem;
-    color: red;
     padding: 20px ;
     text-decoration: none;
     list-style: none;
@@ -12,10 +11,6 @@ li {
 
 p {
     font-size: 2rem;
-
-}
-
-.roster-details { 
 
 }
 

@@ -1,13 +1,9 @@
 .App {
   text-align: center;
-  /* background-image: url('/public/football.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
 
 
-}
-
-.main-img {
 }
 
 .App-logo {
@@ -15,11 +11,7 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
 
 .App-header {
   background-color: #282c34;
@@ -36,11 +28,3 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import ('./SelectedPlayerList.css')
 
@@ -14,7 +14,6 @@ export default function SelectedPlayersList({ user, setUser, selectedPlayers, on
         try {
           const userId = user ? user._id : null;
           
-          // Extract selected player IDs from the selectedPlayers array
           const selectedPlayerIds = selectedPlayers.map((player) => player._id);
       
           const newRoster = {

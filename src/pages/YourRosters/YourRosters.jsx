@@ -4,8 +4,8 @@ import ('./YourRosters.css')
 
 function YourRostersPage() {
   const [rosters, setRosters] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [ setLoading] = useState(true);
+  const [ setError] = useState(null);
 
   useEffect(() => {
 
@@ -25,7 +25,7 @@ function YourRostersPage() {
     }
 
     fetchRosters();
-  }, []);
+  }, );
 
   const handleDelete = async (rosterId) => {
     try {
@@ -42,16 +42,10 @@ function YourRostersPage() {
     }
   };
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
 
-  // if (error) {
-  //   return <div>Error: {error.message}</div>;
-  // }
 
   return (
-    <div>
+    <div className='your-roster'>
       <h2>Your Roster Wishlist</h2>
       {rosters.length === 0 ? (
         <p>No Rosters, click on Create Roster to make one</p>

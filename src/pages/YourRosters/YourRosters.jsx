@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ('./YourRosters.css')
 
 function YourRostersPage() {
   const [rosters, setRosters] = useState([]);
@@ -35,7 +36,6 @@ function YourRostersPage() {
         throw new Error('Failed to delete roster');
       }
 
-      // Update the UI by removing the deleted roster from the state
       setRosters((prevRosters) => prevRosters.filter((roster) => roster._id !== rosterId));
     } catch (err) {
       setError(err);
@@ -52,16 +52,19 @@ function YourRostersPage() {
 
   return (
     <div>
-      <h2>Your Rosters</h2>
-      <ul>
-        {rosters.map((roster) => (
-          <li key={roster._id}>
-            <Link to={`/rosters/${roster._id}`}>{roster.name}</Link>
-            <button onClick={() => handleDelete(roster._id)}>Delete</button>
-
-          </li>
-        ))}
-      </ul>
+      <h2>Your Roster Wishlist</h2>
+      {rosters.length === 0 ? (
+        <p>No Rosters, click on Create Roster to make one</p>
+      ) : (
+        <ul>
+          {rosters.map((roster) => (
+            <li className='roster-list' key={roster._id}>
+              <Link className='teams' to={`/rosters/${roster._id}`}>{roster.name}</Link>
+              <button className='delete-btn' onClick={() => handleDelete(roster._id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

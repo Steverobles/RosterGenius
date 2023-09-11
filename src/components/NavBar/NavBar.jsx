@@ -11,7 +11,9 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav className='navbar'>
       <div className="title-left">
+        <Link to="/rosters" className='title-link'>
         <h1>RosterGenius</h1>
+        </Link>
       </div>
       <div className="nav-links">
         <Link to="/rosters">Your Rosters</Link>

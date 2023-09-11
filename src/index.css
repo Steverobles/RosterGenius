@@ -72,13 +72,13 @@ code {
   text-align: center;
   font-size: 2vmin;
 }
-
+/* 
 .form-container {
   padding: 3vmin;
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
-}
+} */
 
 p.error-message {
   color: var(--orange);
@@ -89,7 +89,7 @@ form {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
-  color: var(--text-light);
+  color:white;
 }
 
 label {
@@ -116,7 +116,7 @@ button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: blue;
+  background-color: rgb(8, 43, 93);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
@@ -125,7 +125,7 @@ button, a.button {
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
-}
+} 
 
 button.btn-sm {
   font-size: 1.5vmin;
@@ -139,10 +139,11 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  border-radius: 5%;
+  /* background-color: var(--tan-4); */
 }
 
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
-}
+} 

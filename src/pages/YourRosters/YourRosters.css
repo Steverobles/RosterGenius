@@ -1,0 +1,22 @@
+h2 {
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+
+}
+
+.delete-btn {
+ background-color: blue;
+ padding: 5px;
+ color: white;
+ font-size: 15px;
+}
+
+.roster-list {
+    /* font-size: 10px; */
+}
+
+.teams {
+    color: red;
+    font-size: 1.7rem;
+}

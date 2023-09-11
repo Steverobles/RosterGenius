@@ -1,12 +1,13 @@
 .CategoryList {
     color: var(--text-light);
     list-style: none;
-    padding: 0;
+    padding: 20px;
     font-size: 1.7vw;
+
   }
   
   .CategoryList li {
-    padding: .6vmin;
+    padding: 3vmin;
     text-align: center;
     border-radius: .5vmin;
     margin-bottom: .5vmin;

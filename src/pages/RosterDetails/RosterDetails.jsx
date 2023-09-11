@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ('./RosterDetails.css')
 
 function RosterDetails() {
   const { rosterId } = useParams();
@@ -45,10 +46,10 @@ function RosterDetails() {
   }
 
   return (
-    <div>
-      <h2>Roster Name</h2>
+    <div className='roster-details'>
       <p> {roster.name}</p>
       <h3>Selected Players</h3>
+      <div className='roster-players'>
       <ul>
         {roster.selectedPlayers.map((player) => (
           <li key={player._id}>
@@ -56,6 +57,7 @@ function RosterDetails() {
           </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 }

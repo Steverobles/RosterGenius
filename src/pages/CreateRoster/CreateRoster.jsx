@@ -13,9 +13,9 @@ export default function CreateRoster({ user, setUser }) {
   const [selectedPlayers, setSelectedPlayers] = useState([]);
   // const [currentRoster, setCurrentRoster] = useState([])
   const [activeCat, setActiveCat] = useState('');
-  const [rosterName, setRosterName] = useState('')
+  // const [rosterName, setRosterName] = useState('')
   const categoriesRef = useRef([]);
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   useEffect(function() {
     async function getItems() {
@@ -62,36 +62,36 @@ export default function CreateRoster({ user, setUser }) {
   const playersByTier = organizePlayersByTier(playerDetails)
 
   
-  const handleSubmitRoster = async () => {
-    try {
-      const userId = user ? user._id : null;
+  // const handleSubmitRoster = async () => {
+  //   try {
+  //     const userId = user ? user._id : null;
       
-      // Extract selected player IDs from the selectedPlayers array
-      const selectedPlayerIds = selectedPlayers.map((player) => player._id);
+  //     // Extract selected player IDs from the selectedPlayers array
+  //     const selectedPlayerIds = selectedPlayers.map((player) => player._id);
   
-      const newRoster = {
-        userId,
-        selectedPlayers:selectedPlayerIds,
-        name: rosterName, 
-      };
+  //     const newRoster = {
+  //       userId,
+  //       selectedPlayers:selectedPlayerIds,
+  //       name: rosterName, 
+  //     };
   
-      const response = await fetch('/api/rosters', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newRoster),
-      });
+  //     const response = await fetch('/api/rosters', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(newRoster),
+  //     });
   
-      if (!response.ok) {
-        throw new Error(`Error creating roster: ${response.statusText}`);
-      }
+  //     if (!response.ok) {
+  //       throw new Error(`Error creating roster: ${response.statusText}`);
+  //     }
   
-      navigate('/rosters');
-    } catch (error) {
-      console.error('Error creating roster:', error);
-    }
-  };
+  //     navigate('/rosters');
+  //   } catch (error) {
+  //     console.error('Error creating roster:', error);
+  //   }
+  // };
 
   return (
     <main className="CreateRosterPage">
@@ -101,7 +101,7 @@ export default function CreateRoster({ user, setUser }) {
           activeCat={activeCat}
           setActiveCat={setActiveCat}
         />
-        <Link to="/rosters" className="button btn-sm">Completed Rosters</Link>
+        {/* <Link to="/rosters" className="button btn-sm">Completed Rosters</Link> */}
         <UserLogOut user={user} setUser={setUser} /> 
       </aside>
       <PlayerList
@@ -112,14 +112,14 @@ export default function CreateRoster({ user, setUser }) {
       <SelectedPlayersList selectedPlayers={selectedPlayers}
       onRemovePlayer={handleRemovePlayer}
       />
-       <div>
+       {/* <div>
         <input type="text" 
           placeholder="Enter Your Roster Name"
           value={rosterName}
           onChange={(t) => setRosterName(t.target.value)}
         />
-      </div>
-      <button onClick={handleSubmitRoster}>Submit Roster</button>
+      </div> */}
+      {/* <button onClick={handleSubmitRoster}>Submit Roster</button> */}
     </main>
   );
 }

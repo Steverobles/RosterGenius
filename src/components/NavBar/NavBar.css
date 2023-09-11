@@ -2,24 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: rgb(8, 43, 93);
+    
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: blue; 
+    background-color: rgb(8, 43, 93);
     color: #fff; 
     padding: 10px 20px; 
+
 }
 
 .title-left {
     flex: 1; 
     margin-right: 50%; 
+    text-decoration: none;
+}
+
+.title-link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 30px;
 }
 
 .title-left h1 {
     font-size: 30px; 
+    background-color: rgb(8, 43, 93);
 }
 
 .nav-links {
@@ -27,32 +38,43 @@
     align-items: center;
     margin-left: 10%;
     padding: 40px 40px 0 40px;
+    background-color: rgb(8, 43, 93);
+
 }
 
 .user-info {
     display: flex;
     flex-direction: column; 
     align-items: flex-end; 
+    background-color: rgb(8, 43, 93);
 }
 
 .nav-links a, .user-info a {
     color: #fff; 
     text-decoration: none;
-    font-size: 15px; 
+    font-size: 20px; 
     margin-right: 10px; 
+    background-color: rgb(8, 43, 93);
 }
 
 .divider {
     color: #fff; 
     font-size: 18px; 
     margin: 0 10px; 
+
 }
 
 .nav-links a:hover, .user-info a:hover {
     text-decoration: underline;
+    background-color: rgb(8, 43, 93);
 }
 
 .welcome {
     margin-bottom: 20px;
     font-size: 15px;
+    background-color: rgb(8, 43, 93);
+}
+
+.logout {
+    background-color: rgb(8, 43, 93);
 }

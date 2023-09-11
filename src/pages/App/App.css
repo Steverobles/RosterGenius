@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  /* background-image: url('/public/football.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
+
+.main-img {
 }
 
 .App-logo {

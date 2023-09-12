@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import sendRequest from '../../utilities/send-request';
 import ('./YourRosters.css')
 
 function YourRostersPage() {
@@ -11,12 +12,8 @@ function YourRostersPage() {
 
     async function fetchRosters() {
       try {
-        const response = await fetch('/api/rosters'); 
-        if (!response.ok) {
-          throw new Error('Failed to fetch rosters');
-        }
-        const data = await response.json();
-        setRosters(data);
+        const data = await sendRequest('/api/rosters', 'GET'); 
+        setRosters(data)
         setLoading(false);
       } catch (err) {
         setError(err);
@@ -27,20 +24,17 @@ function YourRostersPage() {
     fetchRosters();
   }, );
 
+
+
   const handleDelete = async (rosterId) => {
     try {
-      const response = await fetch(`/api/rosters/${rosterId}`, {
-        method: 'DELETE',
-      });
-      if (!response.ok) {
-        throw new Error('Failed to delete roster');
-      }
-
+      await sendRequest(`/api/rosters/${rosterId}`, 'DELETE');
       setRosters((prevRosters) => prevRosters.filter((roster) => roster._id !== rosterId));
     } catch (err) {
       setError(err);
     }
   };
+  
 
 
 

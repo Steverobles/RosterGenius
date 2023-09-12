@@ -25,7 +25,7 @@ const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/players', ensureLoggedIn, require('./routes/api/players'));
 
 const rostersRouter = require('./routes/api/rosters')
-app.use('/api/rosters', rostersRouter)
+app.use('/api/rosters', ensureLoggedIn, rostersRouter)
 
 const apiRouter = require('./routes/api/api')
 app.use('/api', apiRouter)

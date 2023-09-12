@@ -3,7 +3,7 @@ const Player = require('../../models/player')
 
 exports.getAllRosters = async (req, res) => {
     try {
-        const rosters = await Roster.find()
+        const rosters = await Roster.find({user: req.user._id })
         res.json(rosters)
     } catch (error) {
         res.status(500).json({})
@@ -15,13 +15,16 @@ exports.createRoster = async (req, res) => {
         const { name, selectedPlayers } = req.body;
 
         const newRoster = new Roster({
+            user: req.user._id,
             name,
             selectedPlayers, 
         });
 
         await newRoster.save();
         res.json(newRoster);
+
     } catch (error) {
+        console.log(error)
         res.status(500).json(error);
     }
 };

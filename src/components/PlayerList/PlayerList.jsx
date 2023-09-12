@@ -15,28 +15,7 @@ export default function PlayerList({ playerDetails, addPlayerToRoster }) {
     return acc;
   }, {});
 
-  // return (
-  //   <div className="PlayerListDetails">
-  //     {Object.keys(playersByTier).map((tier) => (
-  //       <div key={tier}>
-  //         <h2>Tier {tier}</h2>
-  //         {playersByTier[tier].map((player) => (
-  //           <div key={player._id}>
-  //             <div className="name">{`${player.name}`}</div>
-  //             <div>
-  //               <button
-  //                 className="btn-sm"
-  //                 onClick={() => handleAddToRoster(player)}
-  //               >
-  //                 Select Player
-  //               </button>
-  //             </div>
-  //           </div>
-  //         ))}
-  //       </div>
-  //     ))}
-  //   </div>
-  // );
+
   return (
     <div className="PlayerListDetails">
       {Object.keys(playersByTier).map((tier) => (

@@ -12,14 +12,12 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Route to get roster details by ID
 router.get('/:id', async (req, res) => {
   try {
     const roster = await Roster.findById(req.params.id);
     if (!roster) {
       return res.status(404).json({ error: 'Roster not found.' });
     }
-    // Return the roster details
     res.json(roster);
   } catch (error) {
     res.status(500).json({ error: 'An error occurred while fetching roster details.' });

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
+import sendRequest from '../../utilities/send-request';
 import ('./SelectedPlayerList.css')
 
 
@@ -22,17 +23,8 @@ export default function SelectedPlayersList({ user, setUser, selectedPlayers, on
             name: rosterName, 
           };
       
-          const response = await fetch('/api/rosters', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newRoster),
-          });
+          const response = await sendRequest('/api/rosters', 'POST', newRoster );
       
-          if (!response.ok) {
-            throw new Error(`Error creating roster: ${response.statusText}`);
-          }
       
           navigate('/rosters');
         } catch (error) {

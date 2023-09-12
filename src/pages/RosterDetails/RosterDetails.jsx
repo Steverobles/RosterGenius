@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import sendRequest from '../../utilities/send-request';
 import ('./RosterDetails.css')
 
 function RosterDetails() {
@@ -12,11 +13,8 @@ function RosterDetails() {
   useEffect(() => {
     async function fetchRosterDetails() {
       try {
-        const response = await fetch(`/api/rosters/${rosterId}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch roster details');
-        }
-        const data = await response.json();
+        const data = await sendRequest(`/api/rosters/${rosterId}`, 'GET');
+        
         console.log(data)
         setRoster(data);
 

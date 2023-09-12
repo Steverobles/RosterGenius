@@ -147,3 +147,17 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 } 
+
+@media (max-width: 768px) {
+  /* Mobile styles here */
+}
+
+/* Medium screens (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Tablet styles here */
+}
+
+/* Large screens (1025px and above) */
+@media (min-width: 1025px) {
+  /* Desktop styles here */
+}
